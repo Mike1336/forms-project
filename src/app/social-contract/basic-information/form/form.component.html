@@ -1,27 +1,41 @@
 <div>
+  <mat-form-field style="width: 250px" appearance="outline" floatLabel="always">
+    <mat-label>Номер</mat-label>
+    <input matInput required>
+  </mat-form-field>
+  <mat-form-field style="width: 150px" appearance="outline" floatLabel="always">
+    <mat-label>Дата заключения</mat-label>
+    <input matInput [matDatepicker]="dp1">
+    <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+    <mat-datepicker #dp1></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field style="width: 240px" appearance="outline" floatLabel="always">
+    <mat-label>Дата окончания действия контракта</mat-label>
+    <input matInput [matDatepicker]="dp2">
+    <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+    <mat-datepicker #dp2></mat-datepicker>
+  </mat-form-field>
   <mat-form-field appearance="outline" floatLabel="always">
-    <mat-label>Input</mat-label>
+    <mat-label>Общая сумма, руб</mat-label>
     <input matInput required>
   </mat-form-field>
   <mat-form-field appearance="outline" floatLabel="always">
-    <mat-label>Input</mat-label>
+    <mat-label>Выплачено, руб</mat-label>
     <input matInput required>
   </mat-form-field>
   <mat-form-field appearance="outline" floatLabel="always">
-    <mat-label>Input</mat-label>
+    <mat-label>К выплате, руб</mat-label>
     <input matInput required>
   </mat-form-field>
-  <mat-form-field appearance="outline" floatLabel="always">
-    <mat-label>Input</mat-label>
-    <input matInput required>
+  <mat-form-field style="width: 100%" appearance="outline" floatLabel="always">
+    <mat-label>Направление социальной помощи</mat-label>
+    <mat-select required>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
   </mat-form-field>
-  <mat-form-field appearance="outline" floatLabel="always">
-    <mat-label>Input</mat-label>
-    <input matInput required>
-  </mat-form-field>
-  <mat-form-field appearance="outline" floatLabel="always">
-    <mat-label>Input</mat-label>
-    <input matInput required>
+  <mat-form-field style="width: 100%" appearance="outline" floatLabel="always">
+    <mat-label>Предмет контракта</mat-label>
+    <textarea matInput required></textarea>
   </mat-form-field>
 </div>
 
