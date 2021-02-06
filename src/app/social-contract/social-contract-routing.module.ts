@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SocialContractComponent } from './social-contract.component';
+import { SocialContractComponent } from './components/social-contract/social-contract.component';
 
 const routes: Routes = [
   {

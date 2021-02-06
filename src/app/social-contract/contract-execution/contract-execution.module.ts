@@ -24,4 +24,4 @@ import { ModalComponent } from './modal/modal.component';
     FormComponent,
   ],
 })
-export class BasicInformationModule { }
+export class ContractExecutionModule { }
