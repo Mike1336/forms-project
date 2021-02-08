@@ -1,15 +1,16 @@
 <mat-card>
   <h1>Социальный контракт</h1>
   <mat-accordion multi>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Основные сведения
         </mat-panel-title>
+        <ng-container [ngTemplateOutlet]="status"></ng-container>
       </mat-expansion-panel-header>
-      <basic-information-form></basic-information-form>
+      <basic-information [form]="basicInformationForm" (valid)="log($event)"></basic-information>
     </mat-expansion-panel>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Сведения о семье (гражданине)
@@ -17,7 +18,7 @@
       </mat-expansion-panel-header>
       <family-information-form></family-information-form>
     </mat-expansion-panel>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Программа социальной адаптации
@@ -25,7 +26,7 @@
       </mat-expansion-panel-header>
       <social-adaptation-form></social-adaptation-form>
     </mat-expansion-panel>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Исполнение контракта
@@ -33,7 +34,7 @@
       </mat-expansion-panel-header>
       <contract-execution-form></contract-execution-form>
     </mat-expansion-panel>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Расторжение контракта
@@ -41,7 +42,7 @@
       </mat-expansion-panel-header>
       <contract-termination-form></contract-termination-form>
     </mat-expansion-panel>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
          Результаты обследования после исполнения контракта
@@ -52,3 +53,17 @@
   </mat-accordion>
 </mat-card>
 
+<ng-template #status>
+  <ng-container *ngIf="basicInformationForm.dirty">
+    <ng-container *ngIf="basicInformationForm.valid; else incorrect">
+      <mat-panel-description style="color: green">
+        Заполнено
+      </mat-panel-description>
+    </ng-container>
+    <ng-template #incorrect>
+      <mat-panel-description style="color: #ff0000">
+        Заполните все поля корректно
+      </mat-panel-description>
+    </ng-template>
+  </ng-container>
+</ng-template>
