@@ -51,12 +51,22 @@
       <execution-result-form></execution-result-form>
     </mat-expansion-panel>
   </mat-accordion>
+  <div class="userActions">
+    <button mat-flat-button color="primary">Загрузить файл</button>
+  </div>
+  <div class="userActions print">
+    <button mat-flat-button><mat-icon>print</mat-icon> Печать</button>
+  </div>
+  <div class="userActions saveOrClose">
+    <button mat-flat-button color="primary">Сохранить</button>
+    <button mat-stroked-button>Закрыть</button>
+  </div>
 </mat-card>
 
 <ng-template #status>
   <ng-container *ngIf="basicInformationForm.dirty">
     <ng-container *ngIf="basicInformationForm.valid; else incorrect">
-      <mat-panel-description style="color: green">
+      <mat-panel-description style="color: #eee3e3">
         Заполнено
       </mat-panel-description>
     </ng-container>

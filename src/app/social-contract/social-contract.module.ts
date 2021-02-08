@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { SocialContractRoutingModule } from './social-contract-routing.module';
 import { SocialContractComponent } from './components/social-contract/social-contract.component';
@@ -22,6 +24,8 @@ import { SocialAdaptationModule } from './social-adaptation/social-adaptation.mo
     // Angular Material
     MatCardModule,
     MatExpansionModule,
+    MatButtonModule,
+    MatIconModule,
     // Own
     SocialContractRoutingModule,
     BasicInformationModule,
