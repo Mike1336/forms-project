@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -9,7 +10,8 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './components/form/form.component';
+import { BasicInformationContainer } from './containers/basic-information/basic-information.container';
 
 export const MY_FORMATS = {
   parse: {
@@ -26,10 +28,12 @@ export const MY_FORMATS = {
 @NgModule({
   declarations: [
     FormComponent,
+    BasicInformationContainer,
   ],
   imports: [
     // Angular
     CommonModule,
+    ReactiveFormsModule,
     // Angular Material
     MatInputModule,
     MatFormFieldModule,
@@ -37,7 +41,7 @@ export const MY_FORMATS = {
     MatDatepickerModule,
   ],
   exports: [
-    FormComponent,
+    BasicInformationContainer,
   ],
   providers: [
     {
