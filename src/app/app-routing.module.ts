@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'contract',
-    loadChildren: () => import('./social-contract/social-contract.module').then((m) => m.SocialContractModule),
+    loadChildren: () => import('./social-contract/social-contract-form.module').then((m) => m.SocialContractFormModule),
   },
   {
     path: '',

@@ -1,0 +1,27 @@
+div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  column-gap: 15px;
+}
+mat-form-field {
+  width: 32%;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+@media (max-width: 1050px) {
+  mat-form-field {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  mat-form-field {
+    width: 100%;
+  }
+}

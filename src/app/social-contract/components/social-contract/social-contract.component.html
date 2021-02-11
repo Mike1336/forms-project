@@ -1,6 +1,25 @@
 <mat-card>
-  <h1>Социальный контракт</h1>
+  <div id="metainformation">
+    <h1>Социальный контракт</h1>
+    <div id="dates">
+      <p>Дата создания: <b>03.02.2019</b></p>
+      <p>Дата исполнения: <b>04.10.2019</b></p>
+    </div>
+    <div id="rest">
+      <div><b>Эксперт ОНМСЗ</b>
+      <mat-form-field>
+        <mat-select>
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2">Option 2</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <p><b>Статус:</b> <span>Новое</span></p>
+    </div>
+  </div>
+
   <mat-accordion multi>
+
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -8,8 +27,9 @@
         </mat-panel-title>
         <ng-container [ngTemplateOutlet]="status"></ng-container>
       </mat-expansion-panel-header>
-      <basic-information [form]="basicInformationForm" (valid)="log($event)"></basic-information>
+      <basic-information-form></basic-information-form>
     </mat-expansion-panel>
+
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -18,6 +38,7 @@
       </mat-expansion-panel-header>
       <family-information-form></family-information-form>
     </mat-expansion-panel>
+
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -26,6 +47,16 @@
       </mat-expansion-panel-header>
       <social-adaptation-form></social-adaptation-form>
     </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Сведения о выплатах
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <payments-information-form></payments-information-form>
+    </mat-expansion-panel>
+
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -34,6 +65,7 @@
       </mat-expansion-panel-header>
       <contract-execution-form></contract-execution-form>
     </mat-expansion-panel>
+
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -42,6 +74,16 @@
       </mat-expansion-panel-header>
       <contract-termination-form></contract-termination-form>
     </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Изменение контракта
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <contract-correction-form></contract-correction-form>
+    </mat-expansion-panel>
+
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -50,28 +92,29 @@
       </mat-expansion-panel-header>
       <execution-result-form></execution-result-form>
     </mat-expansion-panel>
+
   </mat-accordion>
   <div class="userActions">
-    <button mat-flat-button color="primary">Загрузить файл</button>
+    <button mat-flat-button>Загрузить файл</button>
   </div>
   <div class="userActions print">
     <button mat-flat-button><mat-icon>print</mat-icon> Печать</button>
   </div>
   <div class="userActions saveOrClose">
-    <button mat-flat-button color="primary">Сохранить</button>
-    <button mat-stroked-button>Закрыть</button>
+    <button mat-flat-button>Сохранить</button>
+    <button mat-stroked-button id="close">Закрыть</button>
   </div>
 </mat-card>
 
 <ng-template #status>
-  <ng-container *ngIf="basicInformationForm.dirty">
+  <ng-container *ngIf="basicInformationForm?.dirty">
     <ng-container *ngIf="basicInformationForm.valid; else incorrect">
-      <mat-panel-description style="color: #eee3e3">
+      <mat-panel-description style="color: #00ca03">
         Заполнено
       </mat-panel-description>
     </ng-container>
     <ng-template #incorrect>
-      <mat-panel-description style="color: #ff0000">
+      <mat-panel-description style="color: #cd2b2b">
         Заполните все поля корректно
       </mat-panel-description>
     </ng-template>
