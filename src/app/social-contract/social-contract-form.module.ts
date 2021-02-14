@@ -5,6 +5,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { SocialContractFormRoutingModule } from './social-contract-form-routing.module';
 import { BasicInformationFormModule } from './basic-information-form/basic-information-form.module';
@@ -16,8 +19,6 @@ import { ContractTerminationFormModule } from './contract-termination-form/contr
 import { SocialContractComponent } from './components/social-contract/social-contract.component';
 import { PaymentsInformationFormModule } from './payments-information-form/payments-information-form.module';
 import { ContractCorrectionFormModule } from './contract-correction-form/contract-correction-form.module';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatDialogModule,
     // Own
     SocialContractFormRoutingModule,
     BasicInformationFormModule,

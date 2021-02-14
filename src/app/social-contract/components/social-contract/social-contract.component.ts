@@ -11,6 +11,7 @@ import { ExecutionResultFormComponent } from '../../execution-result-form/compon
 import { ContractCorrectionFormComponent } from '../../contract-correction-form/components/contract-correction-form/contract-correction-form.component';
 
 @Component({
+  selector: 'social-contract-form',
   templateUrl: './social-contract.component.html',
   styleUrls: ['./social-contract.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

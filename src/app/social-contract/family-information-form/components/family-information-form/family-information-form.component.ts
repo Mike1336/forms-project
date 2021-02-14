@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {FamilyInformationFormDialogComponent} from '../family-information-form-dialog/family-information-form-dialog.component';
 
 const ELEMENT_DATA = [
   {
@@ -34,13 +36,16 @@ const ELEMENT_DATA = [
 })
 export class FamilyInformationFormComponent implements OnInit {
 
-  public displayedColumns: string[] = ['lastname', 'name', 'patronymic', 'snils', 'role', 'headOfFamily', 'menu'];
+  public displayedColumns: string[] = ['add', 'lastname', 'name', 'patronymic', 'snils', 'role', 'headOfFamily', 'menu'];
   public dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private _dialog: MatDialog) { }
 
   public ngOnInit(): void {
+  }
 
+  public showDialog(): void {
+    this._dialog.open(FamilyInformationFormDialogComponent);
   }
 
 }

@@ -8,11 +8,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 
 import { PaymentsInformationFormComponent } from './components/payments-information-form/payments-information-form.component';
+import {PaymentsInformationFormDialogComponent} from './components/payments-information-form-dialog/payments-information-form-dialog.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     PaymentsInformationFormComponent,
+    PaymentsInformationFormDialogComponent,
   ],
   imports: [
     // Angular
@@ -23,6 +28,10 @@ import { PaymentsInformationFormComponent } from './components/payments-informat
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatCheckboxModule,
   ],
   exports: [
     PaymentsInformationFormComponent,

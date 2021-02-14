@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
+
+import { ExecutionResultFormDialogComponent } from '../execution-result-form-dialog/execution-result-form-dialog.component';
+
 const ELEMENT_DATA = [
   {
     date: '10.09.2020',
@@ -17,12 +21,16 @@ const ELEMENT_DATA = [
 })
 export class ExecutionResultFormComponent implements OnInit {
 
-  public displayedColumns: string[] = ['date', 'familyMembersQuantity', 'totalFamilyIncome', 'averageFamilyIncome', 'concluded', 'menu'];
+  public displayedColumns: string[] = ['add', 'date', 'familyMembersQuantity', 'totalFamilyIncome', 'averageFamilyIncome', 'concluded', 'menu'];
   public dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private _dialog: MatDialog) { }
 
   public ngOnInit(): void {
+  }
+
+  public showDialog(): void {
+    this._dialog.open(ExecutionResultFormDialogComponent);
   }
 
 }

@@ -25,7 +25,7 @@
         <mat-panel-title>
           Основные сведения
         </mat-panel-title>
-        <ng-container [ngTemplateOutlet]="status"></ng-container>
+<!--        <ng-container [ngTemplateOutlet]="status"></ng-container>-->
       </mat-expansion-panel-header>
       <basic-information-form></basic-information-form>
     </mat-expansion-panel>
@@ -94,15 +94,15 @@
     </mat-expansion-panel>
 
   </mat-accordion>
-  <div class="userActions">
+  <div class="actions load">
     <button mat-flat-button>Загрузить файл</button>
   </div>
-  <div class="userActions print">
+  <div class="actions print">
     <button mat-flat-button><mat-icon>print</mat-icon> Печать</button>
   </div>
-  <div class="userActions saveOrClose">
+  <div class="actions saveOrClose">
     <button mat-flat-button>Сохранить</button>
-    <button mat-stroked-button id="close">Закрыть</button>
+    <button mat-stroked-button class="close">Закрыть</button>
   </div>
 </mat-card>
 

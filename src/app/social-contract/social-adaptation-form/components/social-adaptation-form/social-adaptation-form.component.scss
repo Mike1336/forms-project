@@ -8,3 +8,13 @@ table {
   width: 100%;
   box-shadow: none;
 }
+
+th {
+  button {
+    mat-icon {
+      color: #0560e0;
+      border: 1px solid #0560e0;
+      border-radius: 5px;
+    }
+  }
+}

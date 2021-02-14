@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
+
+import { SocialAdaptationFormDialogComponent } from '../social-adaptation-form-dialog/social-adaptation-form-dialog.component';
+
 const ELEMENT_DATA = [
   {
     name: 'Обучение',
@@ -38,12 +42,16 @@ const ELEMENT_DATA = [
 })
 export class SocialAdaptationFormComponent implements OnInit {
 
-  public displayedColumns: string[] = ['name', 'plannedExecutionDate', 'money', 'socialPartner', 'controlOpinion', 'menu'];
+  public displayedColumns: string[] = ['add', 'name', 'plannedExecutionDate', 'money', 'socialPartner', 'controlOpinion', 'menu'];
   public dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private _dialog: MatDialog) { }
 
   public ngOnInit(): void {
+  }
+
+  public showDialog(): void {
+    this._dialog.open(SocialAdaptationFormDialogComponent);
   }
 
 }

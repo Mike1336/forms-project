@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
+
+import { ContractExecutionFormDialogComponent } from '../contract-execution-form-dialog/contract-execution-form-dialog.component';
+
 const ELEMENT_DATA = [
   {
     name: 'Обучение',
@@ -34,12 +38,16 @@ const ELEMENT_DATA = [
 })
 export class ContractExecutionFormComponent implements OnInit {
 
-  public displayedColumns: string[] = ['name', 'confirmationDocument', 'confirmationDocumentData', 'fileLink', 'menu'];
+  public displayedColumns: string[] = ['add', 'name', 'confirmationDocument', 'confirmationDocumentData', 'fileLink', 'menu'];
   public dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private _dialog: MatDialog) { }
 
   public ngOnInit(): void {
+  }
+
+  public showDialog(): void {
+    this._dialog.open(ContractExecutionFormDialogComponent);
   }
 
 }
