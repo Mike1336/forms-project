@@ -1,0 +1,61 @@
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="add">
+      <th mat-header-cell *matHeaderCellDef style="padding: 0; width: 45px;">
+        <button mat-icon-button (click)="showDialog()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </th>
+      <td mat-cell *matCellDef="let person"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Мероприятие </th>
+      <td mat-cell *matCellDef="let event"> {{ event.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="confirmationDocument">
+      <th mat-header-cell *matHeaderCellDef> Документ, подтверждающий исполнение </th>
+      <td mat-cell *matCellDef="let event"> {{event.confirmationDocument}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="confirmationDocumentData">
+      <th mat-header-cell *matHeaderCellDef> Данные о документе </th>
+      <td mat-cell *matCellDef="let event"> {{event.confirmationDocumentData}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fileLink">
+      <th mat-header-cell *matHeaderCellDef> Файл </th>
+      <td mat-cell *matCellDef="let person"> {{person.fileLink}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="menu">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let event" style="padding: 0; width: 45px;">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
