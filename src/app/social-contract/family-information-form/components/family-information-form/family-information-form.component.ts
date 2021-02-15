@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import {FamilyInformationFormDialogComponent} from '../family-information-form-dialog/family-information-form-dialog.component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { MatDialog } from '@angular/material/dialog';
+
+import { FamilyInformationFormDialogComponent } from '../family-information-form-dialog/family-information-form-dialog.component';
 
 const ELEMENT_DATA = [
   {
@@ -36,16 +39,58 @@ const ELEMENT_DATA = [
 })
 export class FamilyInformationFormComponent implements OnInit {
 
+  public form: FormGroup;
+
+  public familyMembersCountCtl = new FormControl(null, [
+    Validators.maxLength(2),
+    Validators.pattern(/^-?(0|[1-9]\d*)?$/),
+    Validators.required,
+  ]);
+  public familyIncomeCapitalByExecutionCtl = new FormControl(null, [
+    Validators.minLength(2),
+    Validators.maxLength(15),
+    Validators.pattern(/^-?(0|[1-9]\d*)?$/),
+    Validators.required,
+  ]);
+  public familyMembersCountByExecutionCtl = new FormControl(null, [
+    Validators.maxLength(2),
+    Validators.required,
+  ]);
+  public familyIncomePerCapitalCtl = new FormControl(null, [
+    Validators.minLength(2),
+    Validators.maxLength(15),
+    Validators.pattern(/^-?(0|[1-9]\d*)?$/),
+    Validators.required,
+  ]);
+
   public displayedColumns: string[] = ['add', 'lastname', 'name', 'patronymic', 'snils', 'role', 'headOfFamily', 'menu'];
   public dataSource = ELEMENT_DATA;
 
   constructor(private _dialog: MatDialog) { }
 
   public ngOnInit(): void {
+    this._initForm();
+  }
+
+  public getForm(): FormGroup {
+    if (!this.form) {
+      this._initForm();
+    }
+
+    return this.form;
   }
 
   public showDialog(): void {
     this._dialog.open(FamilyInformationFormDialogComponent);
+  }
+
+  private _initForm(): void {
+    this.form = new FormGroup({
+      familyMembersCount: this.familyMembersCountCtl,
+      familyIncomeCapitalByExecution: this.familyIncomeCapitalByExecutionCtl,
+      familyMembersCountByExecution: this.familyMembersCountByExecutionCtl,
+      familyIncomePerCapital: this.familyIncomePerCapitalCtl,
+    });
   }
 
 }

@@ -7,10 +7,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { SocialAdaptationFormComponent } from './components/social-adaptation-form/social-adaptation-form.component';
 import { SocialAdaptationFormDialogComponent } from './components/social-adaptation-form-dialog/social-adaptation-form-dialog.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatButtonModule,
     MatIconModule,
     MatCheckboxModule,
+    MatDialogModule,
   ],
   exports: [
     SocialAdaptationFormComponent,
