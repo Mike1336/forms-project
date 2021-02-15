@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -10,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
 import { ContractCorrectionFormComponent } from './components/contract-correction-form/contract-correction-form.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { ContractCorrectionFormComponent } from './components/contract-correctio
   imports: [
     // Angular
     CommonModule,
+    ReactiveFormsModule,
     // Material
     MatTableModule,
     MatCheckboxModule,
@@ -26,6 +29,7 @@ import { ContractCorrectionFormComponent } from './components/contract-correctio
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatDatepickerModule,
   ],
   exports: [
     ContractCorrectionFormComponent,

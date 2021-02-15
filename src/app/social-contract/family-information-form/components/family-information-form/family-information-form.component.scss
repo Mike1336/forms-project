@@ -1,11 +1,13 @@
-div {
+form {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   column-gap: 15px;
 }
+
 mat-form-field {
   width: 32%;
+  min-width: 370px;
 }
 
 table {

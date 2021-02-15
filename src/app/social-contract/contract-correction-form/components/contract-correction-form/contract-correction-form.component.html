@@ -1,16 +1,21 @@
-<div>
-  <mat-form-field appearance="outline" floatLabel="always">
-    <mat-label>Дата дополнительного соглашения </mat-label>
-    <input matInput>
+<form [formGroup]="form">
+  <mat-form-field style="min-width: 250px" appearance="outline" floatLabel="always">
+    <mat-label> Дата дополнительного соглашения </mat-label>
+    <input [formControl]="additionalAgreementDateCtl" [matDatepicker]="additionalAgreementDateDP" matInput required>
+    <mat-datepicker-toggle matSuffix [for]="additionalAgreementDateDP"></mat-datepicker-toggle>
+    <mat-datepicker #additionalAgreementDateDP></mat-datepicker>
   </mat-form-field>
-  <mat-form-field appearance="outline" floatLabel="always">
+  <mat-form-field style="min-width: 250px" appearance="outline" floatLabel="always">
     <mat-label> Дата окончания с учетом продления </mat-label>
-    <input matInput>
+    <input [formControl]="dateEndRenewedCtl" [matDatepicker]="dateEndRenewedDP" matInput  required>
+    <mat-datepicker-toggle matSuffix [for]="dateEndRenewedDP"></mat-datepicker-toggle>
+    <mat-datepicker #dateEndRenewedDP></mat-datepicker>
+
   </mat-form-field>
   <mat-form-field style="width: 100%" appearance="outline" floatLabel="always">
     <mat-label> Причина изменения </mat-label>
-    <input matInput>
+    <input [formControl]="modificationReasonCtl" matInput required>
   </mat-form-field>
-</div>
+</form>
 
 

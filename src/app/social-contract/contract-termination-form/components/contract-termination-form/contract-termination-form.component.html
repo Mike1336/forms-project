@@ -1,27 +1,29 @@
-<div xmlns="http://www.w3.org/1999/html">
+<form [formGroup]="form">
   <mat-form-field appearance="outline" floatLabel="always">
     <mat-label>Дата расторжения</mat-label>
-    <input matInput required>
+    <input [formControl]="terminationDateCtl" matInput [matDatepicker]="terminationDateDP" required>
+    <mat-datepicker-toggle matSuffix [for]="terminationDateDP"></mat-datepicker-toggle>
+    <mat-datepicker #terminationDateDP></mat-datepicker>
   </mat-form-field>
   <mat-form-field appearance="outline" floatLabel="always">
     <mat-label>Инициатор расторжения</mat-label>
-    <mat-select required>
-      <mat-option> Получатель\ОНМСЗ\Соглашение</mat-option>
+    <mat-select [formControl]="terminationInitiatorCtl" required>
+      <mat-option value="Получатель\ОНМСЗ\Соглашение"> Получатель\ОНМСЗ\Соглашение</mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field appearance="outline" floatLabel="always">
+  <mat-form-field style="min-width: 320px" appearance="outline" floatLabel="always">
     <mat-label>Срок моратория на заключение контракта с гражданином</mat-label>
-    <input matInput required>
+    <input [formControl]="moratoriumPeriodCtl" matInput required>
   </mat-form-field>
-  <div>
-    <mat-checkbox class="example-margin">
+  <div style="margin-bottom: 20px">
+    <mat-checkbox class="example-margin" [formControl]="isUnscrupulousExecutionCtl">
     </mat-checkbox>
     Недобросовестное <br/> исполнение получателем
   </div>
   <mat-form-field style="width: 100%;" appearance="outline" floatLabel="always">
     <mat-label>Причина расторжения</mat-label>
-    <input matInput required>
+    <input [formControl]="terminationReasonCtl" matInput required>
   </mat-form-field>
-</div>
+</form>
 
 
