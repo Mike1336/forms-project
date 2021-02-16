@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ExecutionResultFormComponent } from './components/execution-result-form/execution-result-form.component';
 import { ExecutionResultFormDialogComponent } from './components/execution-result-form-dialog/execution-result-form-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {DataService} from './services/data.service';
 
 
 @NgModule({
@@ -33,6 +34,9 @@ import {MatDialogModule} from '@angular/material/dialog';
   exports: [
     ExecutionResultFormComponent,
     ExecutionResultFormDialogComponent
+  ],
+  providers: [
+    DataService,
   ],
 })
 export class ExecutionResultFormModule { }

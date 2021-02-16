@@ -6,12 +6,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { PaymentsInformationFormComponent } from './components/payments-information-form/payments-information-form.component';
-import {PaymentsInformationFormDialogComponent} from './components/payments-information-form-dialog/payments-information-form-dialog.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatDialogModule} from '@angular/material/dialog';
+import { PaymentsInformationFormDialogComponent } from './components/payments-information-form-dialog/payments-information-form-dialog.component';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -35,6 +36,9 @@ import {MatDialogModule} from '@angular/material/dialog';
   ],
   exports: [
     PaymentsInformationFormComponent,
+  ],
+  providers: [
+    DataService,
   ],
 })
 export class PaymentsInformationFormModule { }

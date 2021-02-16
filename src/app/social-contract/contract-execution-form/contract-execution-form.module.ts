@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ContractExecutionFormComponent } from './components/contract-execution-form/contract-execution-form.component';
 import { ContractExecutionFormDialogComponent } from './components/contract-execution-form-dialog/contract-execution-form-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {DataService} from './services/data.service';
 
 
 @NgModule({
@@ -32,6 +33,9 @@ import {MatDialogModule} from '@angular/material/dialog';
   ],
   exports: [
     ContractExecutionFormComponent,
+  ],
+  providers: [
+    DataService,
   ],
 })
 export class ContractExecutionFormModule { }
