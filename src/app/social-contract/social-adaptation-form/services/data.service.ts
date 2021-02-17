@@ -50,24 +50,21 @@ export class DataService {
     return this._content$.asObservable();
   }
 
-  public add(member: ISocialEvent): void {
-    this._content = [member, ...this._content];
+  public add(event: ISocialEvent): void {
+    this._content = [event, ...this._content];
     this._content$.next(this._content);
-    console.log(`${member.name} has been added`);
   }
 
-  public update(member: ISocialEvent): void {
-    const index = this._content.findIndex((iterableMember) => iterableMember.id === member.id);
+  public update(event: ISocialEvent): void {
+    const index = this._content.findIndex((iterableEvent) => iterableEvent.id === event.id);
 
-    this._content[index] = member;
+    this._content[index] = event;
     this._content$.next([...this._content]);
-    console.log('Member has been deleted');
   }
 
-  public delete(member: ISocialEvent): void {
-    this._content = this._content.filter((iterableMember) => iterableMember.id !== member.id);
+  public delete(event: ISocialEvent): void {
+    this._content = this._content.filter((iterableEvent) => iterableEvent.id !== event.id);
     this._content$.next([...this._content]);
-    console.log(`${member.name} has been deleted`);
   }
 
 }

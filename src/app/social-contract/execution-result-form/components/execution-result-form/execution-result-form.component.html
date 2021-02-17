@@ -1,58 +1,54 @@
 <div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="results" class="mat-elevation-z8">
 
     <ng-container matColumnDef="add">
       <th mat-header-cell *matHeaderCellDef style="padding: 0; width: 45px;">
-        <button mat-icon-button (click)="showDialog()">
+        <button mat-icon-button (click)="showDialogToAdd()">
           <mat-icon>add</mat-icon>
         </button>
       </th>
-      <td mat-cell *matCellDef="let person"></td>
+      <td mat-cell *matCellDef="let result"></td>
     </ng-container>
 
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Дата обследования </th>
-      <td mat-cell *matCellDef="let examination"> {{ examination.date }} </td>
+      <td mat-cell *matCellDef="let result"> {{ result.date }} </td>
     </ng-container>
 
     <ng-container matColumnDef="familyMembersQuantity">
       <th mat-header-cell *matHeaderCellDef> Количество членов семьи </th>
-      <td mat-cell *matCellDef="let examination"> {{examination.familyMembersQuantity}} </td>
+      <td mat-cell *matCellDef="let result"> {{result.familyMembersQuantity}} </td>
     </ng-container>
 
     <ng-container matColumnDef="totalFamilyIncome">
       <th mat-header-cell *matHeaderCellDef> Общий доход семьи, руб </th>
-      <td mat-cell *matCellDef="let examination"> {{examination.totalFamilyIncome}} </td>
+      <td mat-cell *matCellDef="let result"> {{result.totalFamilyIncome}} </td>
     </ng-container>
 
     <ng-container matColumnDef="averageFamilyIncome">
       <th mat-header-cell *matHeaderCellDef> Среднедушевой доход семьи, руб </th>
-      <td mat-cell *matCellDef="let examination"> {{examination.averageFamilyIncome}} </td>
+      <td mat-cell *matCellDef="let result"> {{result.averageFamilyIncome}} </td>
     </ng-container>
 
     <ng-container matColumnDef="concluded">
       <th mat-header-cell *matHeaderCellDef> Заключен </th>
-      <td mat-cell *matCellDef="let examination"> {{examination.concluded}} </td>
+      <td mat-cell *matCellDef="let result"> {{result.concluded}} </td>
     </ng-container>
 
     <ng-container matColumnDef="menu">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let event" style="padding: 0; width: 45px;">
+      <td mat-cell *matCellDef="let result" style="padding: 0; width: 45px;">
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Redial</span>
+          <button mat-menu-item (click)="showDialogToUpdate(result)">
+            <mat-icon>edit</mat-icon>
+            <span>Изменить</span>
           </button>
-          <button mat-menu-item disabled>
-            <mat-icon>voicemail</mat-icon>
-            <span>Check voice mail</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Disable alerts</span>
+          <button mat-menu-item (click)="delete(result)">
+            <mat-icon>close</mat-icon>
+            <span>Удалить</span>
           </button>
         </mat-menu>
       </td>

@@ -30,10 +30,6 @@ export class SocialAdaptationFormComponent implements OnInit {
     this._listenTableData();
   }
 
-  public showDialog(): void {
-    this._dialog.open(SocialAdaptationFormDialogComponent);
-  }
-
   public getTableData(): ISocialEvent[] {
     return this.socialEvents;
   }
