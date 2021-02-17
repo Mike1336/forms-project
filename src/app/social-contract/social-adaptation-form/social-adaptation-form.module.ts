@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -12,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { SocialAdaptationFormComponent } from './components/social-adaptation-form/social-adaptation-form.component';
 import { SocialAdaptationFormDialogComponent } from './components/social-adaptation-form-dialog/social-adaptation-form-dialog.component';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { SocialAdaptationFormDialogComponent } from './components/social-adaptat
   imports: [
     // Angular
     CommonModule,
+    ReactiveFormsModule,
     // Angular Material
     MatInputModule,
     MatFormFieldModule,
@@ -34,6 +37,9 @@ import { SocialAdaptationFormDialogComponent } from './components/social-adaptat
   ],
   exports: [
     SocialAdaptationFormComponent,
+  ],
+  providers: [
+    DataService,
   ],
 })
 export class SocialAdaptationFormModule { }
