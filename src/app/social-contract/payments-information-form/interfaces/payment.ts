@@ -6,3 +6,5 @@ export interface IPayment {
   description: string;
   payedOut: boolean;
 }
+
+export type Payment = Pick<IPayment, 'id'> & IPayment;

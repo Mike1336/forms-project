@@ -2,7 +2,9 @@
 <form [formGroup]="form">
   <mat-form-field appearance="outline" floatLabel="always" style="width: 25%;">
     <mat-label> Планируемый срок исполнения </mat-label>
-    <input matInput [formControl]="plannedExecutionDateCtl" required />
+    <input matInput [matDatepicker]="plannedExecutionDateDP" [formControl]="plannedExecutionDateCtl" required />
+    <mat-datepicker-toggle matSuffix [for]="plannedExecutionDateDP"></mat-datepicker-toggle>
+    <mat-datepicker #plannedExecutionDateDP></mat-datepicker>
   </mat-form-field>
   <mat-form-field appearance="outline" floatLabel="always" style="width: 60%">
     <mat-label> Мероприятие </mat-label>

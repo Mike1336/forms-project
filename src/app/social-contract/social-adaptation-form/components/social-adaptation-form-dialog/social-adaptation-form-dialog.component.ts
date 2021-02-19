@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { ISocialEvent } from '../../interfaces/social-event';
+import { ISocialEvent, SocialEvent } from '../../interfaces/social-event';
 
 @Component({
   templateUrl: './social-adaptation-form-dialog.component.html',
@@ -25,7 +25,7 @@ export class SocialAdaptationFormDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    private _data: any,
+    private _data: SocialEvent,
     private _dialogRef: MatDialogRef<ISocialEvent>,
   ) { }
 
@@ -38,9 +38,12 @@ export class SocialAdaptationFormDialogComponent implements OnInit {
       return;
     }
 
+    const plannedExecutionDate = this.plannedExecutionDateCtl.value.format('L');
+
     const event = {
       id: this._data.id,
       ...this.form.value,
+      plannedExecutionDate,
     };
 
     this._dialogRef.close(event);

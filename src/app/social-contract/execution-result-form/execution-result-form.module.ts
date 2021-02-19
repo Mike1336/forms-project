@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ExecutionResultFormComponent } from './components/execution-result-form/execution-result-form.component';
 import { ExecutionResultFormDialogComponent } from './components/execution-result-form-dialog/execution-result-form-dialog.component';
 import { DataService } from './services/data.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { DataService } from './services/data.service';
     MatMenuModule,
     MatIconModule,
     MatDialogModule,
+    MatDatepickerModule,
   ],
   exports: [
     ExecutionResultFormComponent,

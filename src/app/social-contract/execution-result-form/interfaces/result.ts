@@ -6,3 +6,5 @@ export interface IResult {
   averageFamilyIncome: string;
   concluded: string;
 }
+
+export type Result = Pick<IResult, 'id'> & IResult;

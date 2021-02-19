@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { IResult } from '../../interfaces/result';
+import { Result, IResult } from '../../interfaces/result';
 
 @Component({
   templateUrl: './execution-result-form-dialog.component.html',
@@ -25,7 +25,7 @@ export class ExecutionResultFormDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    private _data: any,
+    private _data: Result,
     private _dialogRef: MatDialogRef<IResult>,
   ) { }
 
@@ -38,9 +38,12 @@ export class ExecutionResultFormDialogComponent implements OnInit {
       return;
     }
 
+    const date = this.dateCtl.value.format('L');
+
     const result = {
       id: this._data.id,
       ...this.form.value,
+      date,
     };
 
     this._dialogRef.close(result);

@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PaymentsInformationFormComponent } from './components/payments-information-form/payments-information-form.component';
 import { PaymentsInformationFormDialogComponent } from './components/payments-information-form-dialog/payments-information-form-dialog.component';
 import { DataService } from './services/data.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { DataService } from './services/data.service';
     MatFormFieldModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatDatepickerModule,
   ],
   exports: [
     PaymentsInformationFormComponent,

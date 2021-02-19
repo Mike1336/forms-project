@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { IFamilyMember } from '../../interfaces/family-member';
+import { FamilyMember } from '../../interfaces/family-member';
 
 @Component({
   templateUrl: './family-information-form-dialog.component.html',
@@ -29,8 +29,8 @@ export class FamilyInformationFormDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    private _data: any,
-    private _dialogRef: MatDialogRef<IFamilyMember>,
+    private _data: FamilyMember,
+    private _dialogRef: MatDialogRef<FamilyMember>,
   ) { }
 
   public ngOnInit(): void {

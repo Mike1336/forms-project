@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { IPayment } from '../../interfaces/payment';
+import { IPayment, Payment } from '../../interfaces/payment';
 
 @Component({
   templateUrl: './payments-information-form-dialog.component.html',
@@ -25,7 +25,7 @@ export class PaymentsInformationFormDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    private _data: any,
+    private _data: Payment,
     private _dialogRef: MatDialogRef<IPayment>,
   ) { }
 
@@ -38,12 +38,15 @@ export class PaymentsInformationFormDialogComponent implements OnInit {
       return;
     }
 
-    const event = {
+    const date = this.dateCtl.value.format('L');
+
+    const payment = {
       id: this._data.id,
       ...this.form.value,
+      date,
     };
 
-    this._dialogRef.close(event);
+    this._dialogRef.close(payment);
   }
 
   private _initForm(): void {

@@ -3,7 +3,9 @@
 <form [formGroup]="form">
   <mat-form-field appearance="outline" floatLabel="always">
     <mat-label> Дата обследования </mat-label>
-    <input matInput [formControl]="dateCtl" required>
+    <input matInput [matDatepicker]="dateDP" [formControl]="dateCtl" required>
+    <mat-datepicker-toggle matSuffix [for]="dateDP"></mat-datepicker-toggle>
+    <mat-datepicker #dateDP></mat-datepicker>
   </mat-form-field>
   <mat-form-field appearance="outline" floatLabel="always">
     <mat-label> Количество членов семьи </mat-label>

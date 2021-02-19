@@ -6,3 +6,5 @@ export interface ISocialEvent {
   socialPartner: string;
   controlOpinion: string;
 }
+
+export type SocialEvent = Pick<ISocialEvent, 'id'> & ISocialEvent;

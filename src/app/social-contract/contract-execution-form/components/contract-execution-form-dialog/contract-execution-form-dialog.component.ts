@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { IExecutionEvent } from '../../interfaces/execution-event';
+import { IExecutionEvent, ExecutionEvent } from '../../interfaces/execution-event';
 
 @Component({
   templateUrl: './contract-execution-form-dialog.component.html',
@@ -21,7 +21,7 @@ export class ContractExecutionFormDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    private _data: any,
+    private _data: ExecutionEvent,
     private _dialogRef: MatDialogRef<IExecutionEvent>,
   ) { }
 

@@ -5,3 +5,5 @@ export interface IExecutionEvent {
   confirmationDocumentData: string;
   fileLink: string;
 }
+
+export type ExecutionEvent = Pick<IExecutionEvent, 'id'> & IExecutionEvent;

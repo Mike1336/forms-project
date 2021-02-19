@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { SocialAdaptationFormComponent } from './components/social-adaptation-form/social-adaptation-form.component';
 import { SocialAdaptationFormDialogComponent } from './components/social-adaptation-form-dialog/social-adaptation-form-dialog.component';
@@ -34,6 +35,7 @@ import { DataService } from './services/data.service';
     MatIconModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatDatepickerModule,
   ],
   exports: [
     SocialAdaptationFormComponent,

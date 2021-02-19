@@ -7,3 +7,5 @@ export interface IFamilyMember {
   role: string;
   headOfFamily: boolean;
 }
+
+export type FamilyMember = Pick<IFamilyMember, 'id'> & IFamilyMember;

@@ -16,7 +16,7 @@ import { DataService } from '../../services/data.service';
 export class ContractExecutionFormComponent implements OnInit {
 
   public displayedColumns: string[] = ['add', 'name', 'confirmationDocument', 'confirmationDocumentData', 'fileLink', 'menu'];
-  public executionEvents: IExecutionEvent[];
+  public executionEvents: IExecutionEvent[] = [];
 
   constructor(
     private _dataService: DataService,
