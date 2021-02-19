@@ -1,9 +1,9 @@
 <div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="socialEvents" class="mat-elevation-z8">
 
     <ng-container matColumnDef="add">
       <th mat-header-cell *matHeaderCellDef style="padding: 0; width: 45px;">
-        <button mat-icon-button (click)="showDialog()">
+        <button mat-icon-button (click)="showDialogToAdd()">
           <mat-icon>add</mat-icon>
         </button>
       </th>
@@ -44,17 +44,13 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Redial</span>
+          <button mat-menu-item (click)="showDialogToUpdate(event)">
+            <mat-icon>edit</mat-icon>
+            <span>Изменить</span>
           </button>
-          <button mat-menu-item disabled>
-            <mat-icon>voicemail</mat-icon>
-            <span>Check voice mail</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Disable alerts</span>
+          <button mat-menu-item (click)="delete(event)">
+            <mat-icon>close</mat-icon>
+            <span>Удалить</span>
           </button>
         </mat-menu>
       </td>

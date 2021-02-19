@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { FamilyInformationFormComponent } from './components/family-information-form/family-information-form.component';
 import { FamilyInformationFormDialogComponent } from './components/family-information-form-dialog/family-information-form-dialog.component';
+import {DataService} from './services/data.service';
 
 
 @NgModule({
@@ -36,6 +37,9 @@ import { FamilyInformationFormDialogComponent } from './components/family-inform
   ],
   exports: [
     FamilyInformationFormComponent,
+  ],
+  providers: [
+    DataService,
   ],
 })
 export class FamilyInformationFormModule { }
