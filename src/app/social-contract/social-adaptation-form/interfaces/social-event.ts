@@ -1,7 +1,7 @@
 export interface ISocialEvent {
   id: number;
   name: string;
-  plannedExecutionDate: string;
+  plannedExecutionDate: Date;
   money: boolean;
   socialPartner: string;
   controlOpinion: string;

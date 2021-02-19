@@ -38,12 +38,9 @@ export class SocialAdaptationFormDialogComponent implements OnInit {
       return;
     }
 
-    const plannedExecutionDate = this.plannedExecutionDateCtl.value.format('L');
-
     const event = {
       id: this._data.id,
       ...this.form.value,
-      plannedExecutionDate,
     };
 
     this._dialogRef.close(event);

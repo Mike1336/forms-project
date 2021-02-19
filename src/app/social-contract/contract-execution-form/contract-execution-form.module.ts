@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { ContractExecutionFormComponent } from './components/contract-execution-form/contract-execution-form.component';
 import { ContractExecutionFormDialogComponent } from './components/contract-execution-form-dialog/contract-execution-form-dialog.component';

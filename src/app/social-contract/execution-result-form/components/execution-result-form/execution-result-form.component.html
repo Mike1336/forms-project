@@ -12,7 +12,7 @@
 
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Дата обследования </th>
-      <td mat-cell *matCellDef="let result"> {{ result.date }} </td>
+      <td mat-cell *matCellDef="let result"> {{ result.date | date :'dd.MM.YYYY' }} </td>
     </ng-container>
 
     <ng-container matColumnDef="familyMembersQuantity">
@@ -31,7 +31,7 @@
     </ng-container>
 
     <ng-container matColumnDef="concluded">
-      <th mat-header-cell *matHeaderCellDef> Заключен </th>
+      <th mat-header-cell *matHeaderCellDef> Заключение </th>
       <td mat-cell *matCellDef="let result"> {{result.concluded}} </td>
     </ng-container>
 

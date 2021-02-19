@@ -10,7 +10,7 @@ export class DataService {
   private _content: IPayment[] = [
     {
       id: 1,
-      date: '01.09.2020',
+      date: new Date('09.01.2020'),
       amount: '30000',
       event: '',
       description: 'Выплата на оплату обучения',
@@ -18,7 +18,7 @@ export class DataService {
     },
     {
       id: 2,
-      date: '01.04.2021',
+      date: new Date('04.01.2021'),
       amount: '10000',
       event: '',
       description: 'Доплата к окладу в размере прожиточного минимума',
@@ -26,7 +26,7 @@ export class DataService {
     },
     {
       id: 3,
-      date: '01.05.2021',
+      date: new Date('05.01.2021'),
       amount: '10000',
       event: '',
       description: 'Доплата к окладу в размере прожиточного минимума',
@@ -34,7 +34,7 @@ export class DataService {
     },
     {
       id: 4,
-      date: '01.06.2020',
+      date: new Date('06.01.2021'),
       amount: '10000',
       event: '',
       description: 'Доплата к окладу в размере прожиточного минимума',

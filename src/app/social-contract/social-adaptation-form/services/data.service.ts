@@ -11,7 +11,7 @@ export class DataService {
     {
       id: 1,
       name: 'Обучение',
-      plannedExecutionDate: '10.09.2020',
+      plannedExecutionDate: new Date('09.10.2020'),
       money: false,
       socialPartner: 'Служба занятости',
       controlOpinion: 'Выполнено',
@@ -19,7 +19,7 @@ export class DataService {
     {
       id: 2,
       name: 'Открытие ИП',
-      plannedExecutionDate: '12.09.2020',
+      plannedExecutionDate: new Date('09.12.2020'),
       money: false,
       socialPartner: 'Служба занятости',
       controlOpinion: 'Выполнено',
@@ -27,7 +27,7 @@ export class DataService {
     {
       id: 3,
       name: 'Покупка оборудования',
-      plannedExecutionDate: '15.09.2020',
+      plannedExecutionDate: new Date('09.15.2020'),
       money: false,
       socialPartner: 'Министерство сельского хозяйства',
       controlOpinion: 'Выполнено',
@@ -35,7 +35,7 @@ export class DataService {
     {
       id: 4,
       name: 'Покупка сырья',
-      plannedExecutionDate: '20.09.2020',
+      plannedExecutionDate: new Date('09.20.2020'),
       money: false,
       socialPartner: 'Министерство сельского хозяйства',
       controlOpinion: 'Выполнено',

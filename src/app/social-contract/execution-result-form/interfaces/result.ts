@@ -1,6 +1,6 @@
 export interface IResult {
   id: number;
-  date: string;
+  date: Date;
   familyMembersQuantity: string;
   totalFamilyIncome: string;
   averageFamilyIncome: string;

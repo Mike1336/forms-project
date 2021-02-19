@@ -10,7 +10,7 @@ export class DataService {
   private _content: IResult[] = [
     {
       id: 1,
-      date: '10.09.2020',
+      date: new Date('09.10.2020'),
       familyMembersQuantity: '4',
       totalFamilyIncome: '40 000',
       averageFamilyIncome: '10 000',

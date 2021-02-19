@@ -38,12 +38,9 @@ export class ExecutionResultFormDialogComponent implements OnInit {
       return;
     }
 
-    const date = this.dateCtl.value.format('L');
-
     const result = {
       id: this._data.id,
       ...this.form.value,
-      date,
     };
 
     this._dialogRef.close(result);

@@ -38,12 +38,9 @@ export class PaymentsInformationFormDialogComponent implements OnInit {
       return;
     }
 
-    const date = this.dateCtl.value.format('L');
-
     const payment = {
       id: this._data.id,
       ...this.form.value,
-      date,
     };
 
     this._dialogRef.close(payment);

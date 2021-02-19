@@ -1,6 +1,6 @@
 export interface IPayment {
   id: number;
-  date: string;
+  date: Date;
   amount: string;
   event: string;
   description: string;
