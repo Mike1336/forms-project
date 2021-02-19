@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 15px;
+}
+
+mat-form-field {
+  width: 24%;
+}

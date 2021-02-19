@@ -1,0 +1,39 @@
+form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  column-gap: 15px;
+}
+
+mat-form-field {
+  width: 32%;
+  min-width: 370px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+th {
+  button {
+    mat-icon {
+      color: #0560e0;
+      border: 1px solid #0560e0;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  mat-form-field {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
